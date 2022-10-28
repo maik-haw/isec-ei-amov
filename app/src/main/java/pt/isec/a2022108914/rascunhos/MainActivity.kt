@@ -22,19 +22,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnColor.setOnClickListener {
-            //Toast.makeText(this, getString(R.string.msg_soon), Toast.LENGTH_LONG).show()
             intent = Intent(this, ConfigColorActivity::class.java)
             startActivity(intent)
         }
         binding.btnGallery.setOnClickListener {
-            Toast.makeText(this, getString(R.string.msg_soon), Toast.LENGTH_LONG).show()
+            startActivity(ConfigImageActivity.getGalleryIntent(this))
         }
         binding.btnPhoto.setOnClickListener {
-            Toast.makeText(this, getString(R.string.msg_soon), Toast.LENGTH_LONG).show()
+            startActivity(ConfigImageActivity.getPhotoIntent(this))
         }
         binding.btnHistory.setOnClickListener {
-            dialog()
-            Snackbar.make(it, getString(R.string.msg_soon), Snackbar.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.msg_soon), Toast.LENGTH_SHORT).show()
         }
         val p = resources.getStringArray(R.array.option_list)
         p.sort()

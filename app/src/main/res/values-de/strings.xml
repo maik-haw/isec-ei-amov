@@ -5,4 +5,12 @@
     <string name="msg_gallery">Galerie</string>
     <string name="msg_photo">Foto</string>
     <string name="msg_history">Verlauf</string>
+    <string name="mn_save">Speichern</string>
+    <string name="mn_white">Weiß</string>
+    <string name="mn_yellow">Gelb</string>
+    <string name="mn_blue">Blau</string>
+    <string name="mn_black">Schwarz</string>
+    <string name="btn_choose_image">Bild wählen</string>
+    <string name="ask_background_image">Hintergrundbild</string>
+    <string name="btn_take_photo">Foto aufnehmen</string>
 </resources>

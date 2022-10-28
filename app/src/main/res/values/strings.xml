@@ -20,4 +20,7 @@
     <string name="mn_yellow">yellow</string>
     <string name="mn_blue">blue</string>
     <string name="mn_black">black</string>
+    <string name="btn_choose_image">Choose Image</string>
+    <string name="ask_background_image">Background Image</string>
+    <string name="btn_take_photo">Take Photo</string>
 </resources>
