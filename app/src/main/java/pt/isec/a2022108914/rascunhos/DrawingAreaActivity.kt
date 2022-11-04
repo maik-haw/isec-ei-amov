@@ -24,10 +24,18 @@ class DrawingAreaActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.app_name) +
                 " " + title
 
-        drawingArea = DrawingArea(
-            this,
-            intent.getIntExtra(COLOR_KEY, Color.WHITE)
-        )
+        val imagePath = intent.getStringExtra(IMAGE_KEY)
+        if(imagePath == null) {
+            drawingArea = DrawingArea(
+                this,
+                intent.getIntExtra(COLOR_KEY, Color.WHITE)
+            )
+        } else {
+            drawingArea = DrawingArea(
+                this,
+                imagePath
+            )
+        }
 
         binding.frDrawingArea.addView(drawingArea)
     }
@@ -58,11 +66,19 @@ class DrawingAreaActivity : AppCompatActivity() {
         const val TAG = "DrawingAreaActivity"
         const val TITLE_KEY = "title"
         const val COLOR_KEY = "color"
+        const val IMAGE_KEY = "imagePath"
 
         fun getIntent(context: Context, title: String, color: Int): Intent {
             val intent = Intent(context, DrawingAreaActivity::class.java)
             intent.putExtra(TITLE_KEY, title)
             intent.putExtra(COLOR_KEY, color)
+            return intent
+        }
+
+        fun getIntent(context: Context, title: String, imagePath: String): Intent {
+            val intent = Intent(context, DrawingAreaActivity::class.java)
+            intent.putExtra(TITLE_KEY, title)
+            intent.putExtra(IMAGE_KEY, imagePath)
             return intent
         }
     }

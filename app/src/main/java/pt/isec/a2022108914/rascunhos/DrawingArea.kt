@@ -19,6 +19,8 @@ class DrawingArea @JvmOverloads constructor (
 ) : View(context, attrs, defStyleAttr, defStyleRes), GestureDetector.OnGestureListener {
 
     private var color: Int = Color.WHITE
+    private var imageFile: String? = null
+
     val paint = Paint(Paint.DITHER_FLAG).apply {
         color = Color.BLACK
         strokeWidth = 4.0f
@@ -45,11 +47,21 @@ class DrawingArea @JvmOverloads constructor (
         setBackgroundColor(color)
     }
 
+    constructor(context: Context, imageFile: String) : this(context) {
+        this.imageFile = imageFile
+        setPic(this, imageFile)
+    }
+
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         for(line in drawing) {
             canvas?.drawPath(line.path, paint.apply { color = line.color })
         }
+    }
+
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        imageFile?.let { setPic(this, it) }
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {

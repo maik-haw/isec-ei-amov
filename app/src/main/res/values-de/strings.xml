@@ -13,4 +13,5 @@
     <string name="btn_choose_image">Bild wählen</string>
     <string name="ask_background_image">Hintergrundbild</string>
     <string name="btn_take_photo">Foto aufnehmen</string>
+    <string name="img_missing">Image is missing</string>
 </resources>
